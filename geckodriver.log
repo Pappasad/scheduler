@@ -1,0 +1,57 @@
+1733358860751	geckodriver	INFO	Listening on 127.0.0.1:52361
+1733358863828	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--profile C:\\Users\\pappasad\\AppData\\Ro ... illa\\Firefox\\Profiles\\exiycte7.selenium" "--remote-debugging-port" "52362" "--remote-allow-hosts" "localhost" "-no-remote"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1733358864315	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-profile C:\\Users\\pappasad\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\exiycte7.selenium"
+1733358864373	Marionette	INFO	Listening on port 52372
+WebDriver BiDi listening on ws://127.0.0.1:52362
+Read port: 52372
+1733358864483	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:52362/devtools/browser/89ead4a3-b91e-41fc-a272-4ec0056da168
+JavaScript warning: https://www.google.com/js/bg/ORzocuJI_3ILBtgODgF52ZxocmW5ZxdGslv3881SXus.js line 2 > eval line 2706 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: WindowsJumpLists: "Failed to fetch favicon for " "https://docs.google.com/spreadsheets/d/1m5bwvzHatM3FUG2s3pw8qi3cNSgreoJct9tXDwIKbZw/edit?pli=1&gid=2037975783#gid=2037975783" ({})
+console.warn: WindowsJumpLists: "Failed to fetch favicon for " "https://docs.google.com/spreadsheets/d/1m5bwvzHatM3FUG2s3pw8qi3cNSgreoJct9tXDwIKbZw/edit?gid=2037975783&pli=1#gid=2037975783" ({})
+console.warn: WindowsJumpLists: "Failed to fetch favicon for " "https://gds.google.com/web/chip?cardIndex=0&hl=en&authuser=0&gdsid=-1721336916&continue=https%3A%2F%2Faccounts.google.com%2FServiceLogin%3Fcontinue%3Dhttps%253A%252F%252Fwww.google.com%252Fsearch%253Fclient%253Dfirefox-b-1-d%2526q%253Dgoogle%26hl%3Den%26authuser%3D0%26passive%3Dtrue%26sarp%3D1%26aodrpl%3D1%26checkedDomains%3Dyoutube%26checkConnection%3Dyoutube%253A73%26pstMsg%3D1&rapt=AEjHL4PesCblwU-8pjIbYOewRw6tBdx7kHqf-C2jirnMJnHxREYUfBPfHGZBkoz75Q6hCQhs4gJZN-OEAeBw1-t-w9Zo5972Zw&ep=p&landing=true" ({})
+1733359049724	Marionette	WARN	Connection attempt denied because an active session has been found
+1733359049826	Marionette	WARN	Connection attempt denied because an active session has been found
+1733359049928	Marionette	WARN	Connection attempt denied because an active session has been found
+console.error: "Warning: unrecognized command line flag" "-profile C:\\Users\\pappasad\\AppData\\Roaming\\MoziRead port: 52372
+files\\exiycte7.selenium"
+1733359050057	Marionette	WARN	Connection attempt denied because an active session has been found
+1733359062817	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1733359065009	Marionette	INFO	Stopped listening on port 52372
+1733359079913	geckodriver	INFO	Listening on 127.0.0.1:52648
+1733359082992	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--profile C:\\Users\\pappasad\\AppData\\Ro ... illa\\Firefox\\Profiles\\exiycte7.selenium" "--remote-debugging-port" "52649" "--remote-allow-hosts" "localhost" "-no-remote"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1733359083494	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-profile C:\\Users\\pappasad\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\exiycte7.selenium"
+1733359083552	Marionette	INFO	Listening on port 52656
+WebDriver BiDi listening on ws://127.0.0.1:52649
+Read port: 52656
+1733359083656	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:52649/devtools/browser/66cd9018-7d8e-42db-9653-62e45f137618
+JavaScript warning: https://www.google.com/js/bg/ORzocuJI_3ILBtgODgF52ZxocmW5ZxdGslv3881SXus.js line 2 > eval line 6041 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: WindowsJumpLists: "Failed to fetch favicon for " "https://docs.google.com/spreadsheets/d/1m5bwvzHatM3FUG2s3pw8qi3cNSgreoJct9tXDwIKbZw/edit?pli=1&gid=2037975783#gid=2037975783" ({})
+console.warn: WindowsJumpLists: "Failed to fetch favicon for " "https://docs.google.com/spreadsheets/d/1m5bwvzHatM3FUG2s3pw8qi3cNSgreoJct9tXDwIKbZw/edit?gid=2037975783&pli=1#gid=2037975783" ({})
+console.warn: WindowsJumpLists: "Failed to fetch favicon for " "https://gds.google.com/web/chip?cardIndex=0&hl=en&authuser=0&gdsid=-1721336916&continue=https%3A%2F%2Faccounts.google.com%2FServiceLogin%3Fcontinue%3Dhttps%253A%252F%252Fwww.google.com%252Fsearch%253Fclient%253Dfirefox-b-1-d%2526q%253Dgoogle%26hl%3Den%26authuser%3D0%26passive%3Dtrue%26sarp%3D1%26aodrpl%3D1%26checkedDomains%3Dyoutube%26checkConnection%3Dyoutube%253A73%26pstMsg%3D1&rapt=AEjHL4PesCblwU-8pjIbYOewRw6tBdx7kHqf-C2jirnMJnHxREYUfBPfHGZBkoz75Q6hCQhs4gJZN-OEAeBw1-t-w9Zo5972Zw&ep=p&landing=true" ({})
+console.warn: WindowsJumpLists: "Failed to fetch favicon for " "https://docs.google.com/spreadsheets/d/1m5bwvzHatM3FUG2s3pw8qi3cNSgreoJct9tXDwIKbZw/edit?pli=1&gid=2037975783#gid=2037975783" ({})
+console.warn: WindowsJumpLists: "Failed to fetch favicon for " "https://docs.google.com/spreadsheets/d/1m5bwvzHatM3FUG2s3pw8qi3cNSgreoJct9tXDwIKbZw/edit?gid=2037975783&pli=1#gid=2037975783" ({})
+console.warn: WindowsJumpLists: "Failed to fetch favicon for " "https://gds.google.com/web/chip?cardIndex=0&hl=en&authuser=0&gdsid=-1721336916&continue=https%3A%2F%2Faccounts.google.com%2FServiceLogin%3Fcontinue%3Dhttps%253A%252F%252Fwww.google.com%252Fsearch%253Fclient%253Dfirefox-b-1-d%2526q%253Dgoogle%26hl%3Den%26authuser%3D0%26passive%3Dtrue%26sarp%3D1%26aodrpl%3D1%26checkedDomains%3Dyoutube%26checkConnection%3Dyoutube%253A73%26pstMsg%3D1&rapt=AEjHL4PesCblwU-8pjIbYOewRw6tBdx7kHqf-C2jirnMJnHxREYUfBPfHGZBkoz75Q6hCQhs4gJZN-OEAeBw1-t-w9Zo5972Zw&ep=p&landing=true" ({})
+console.warn: WindowsJumpLists: "Failed to fetch favicon for " "https://docs.google.com/spreadsheets/d/1m5bwvzHatM3FUG2s3pw8qi3cNSgreoJct9tXDwIKbZw/edit?pli=1&gid=2037975783#gid=2037975783" ({})
+console.warn: WindowsJumpLists: "Failed to fetch favicon for " "https://docs.google.com/spreadsheets/d/1m5bwvzHatM3FUG2s3pw8qi3cNSgreoJct9tXDwIKbZw/edit?gid=2037975783&pli=1#gid=2037975783" ({})
+console.warn: WindowsJumpLists: "Failed to fetch favicon for " "https://gds.google.com/web/chip?cardIndex=0&hl=en&authuser=0&gdsid=-1721336916&continue=https%3A%2F%2Faccounts.google.com%2FServiceLogin%3Fcontinue%3Dhttps%253A%252F%252Fwww.google.com%252Fsearch%253Fclient%253Dfirefox-b-1-d%2526q%253Dgoogle%26hl%3Den%26authuser%3D0%26passive%3Dtrue%26sarp%3D1%26aodrpl%3D1%26checkedDomains%3Dyoutube%26checkConnection%3Dyoutube%253A73%26pstMsg%3D1&rapt=AEjHL4PesCblwU-8pjIbYOewRw6tBdx7kHqf-C2jirnMJnHxREYUfBPfHGZBkoz75Q6hCQhs4gJZN-OEAeBw1-t-w9Zo5972Zw&ep=p&landing=true" ({})
+1733359468686	Marionette	WARN	Connection attempt denied because an active session has been found
+1733359468788	Marionette	WARN	Connection attempt denied because an active session has been found
+1733359468890	Marionette	WARN	Connection attempt denied because an active session has been found
+console.error: "Warning: unrecognized command line flag" "-profile C:\\Users\\pappasad\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\exiycte7.selenium"
+1733359469020	Marionette	WARN	Connection attempt denied because an active session has been found
+1733359481774	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1733359523241	Marionette	WARN	Connection attempt denied because an active session has been found
+1733359523344	Marionette	WARN	Connection attempt denied because an active session has been found
+1733359523446	Marionette	WARN	Connection attempt denied because an active session has been found
+1733359523547	Marionette	WARN	Connection attempt denied because an active session has been found
+console.error: "Warning: unrecognized command line flag" "-profile C:\\Users\\pappasad\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\exiycte7.selenium"
+1733359536409	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1733359551052	Marionette	INFO	Stopped listening on port 52656

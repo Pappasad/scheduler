@@ -2,7 +2,7 @@ from scheduler import Scheduler
 from driver import SheetDriver
 
 # Path to the JSON credentials required for Google Sheets API access.
-CREDENTIALS_PATH = "scheduler-443419-6ae91578aedb.json"
+CREDENTIALS_PATH = "scheduler-443419-d3a6ff019998.json"
 
 # Reading configuration details from 'url.txt'.
 with open('url.txt', 'r') as input:
