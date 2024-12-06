@@ -1,0 +1,90 @@
+header {
+    position: absolute;
+    top: 0; /* Position at the very top */
+    left: 0; /* Align to the left edge */
+    width: 100%; /* Full-width */
+    background-color: #D3D3D3; /* Gray background */
+    text-align: center; /* Center text horizontally */
+    margin-bottom: 20px;
+    padding: 20px 0; /* Add some vertical padding */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for styling */
+}
+
+body {
+    display: flex; /* Enable Flexbox layout */
+    flex-direction: column; /* Arrange items in a column */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100vh; /* Full height of the viewport */
+    margin: 0; /* Remove default margin */
+    background-color: #f0f0f0; /* Optional background color */
+}
+
+#task-list-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 50px auto; /* Checkbox column and task description column */
+    margin: 100px auto; /* Center the container and add space from the header */
+    max-width: 600px; /* Optional: Limit the width of the container */
+    padding: 20px; /* Inner padding for content */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.task-label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+/* Style for the checkbox */
+.task-label input[type="checkbox"] {
+    appearance: none; /* Remove default checkbox styling */
+    width: 20px; /* Size of the checkbox */
+    height: 20px;
+    border: 2px solid #333; /* Border color */
+    border-radius: 4px; /* Optional: Rounded corners */
+    background-color: white; /* Default background */
+    cursor: pointer; /* Pointer cursor on hover */
+    position: relative;
+}
+
+/* Style when the checkbox is checked */
+.task-label input[type="checkbox"]:checked {
+    background-color: #00FF00; /* Bright green background */
+    border-color: #333; /* Dark border for contrast */
+}
+
+/* Add a checkmark */
+.task-label input[type="checkbox"]:checked::after {
+    content: "✓"; /* Unicode checkmark character */
+    color: black; /* Black checkmark */
+    font-size: 30px; /* Adjust size of the checkmark */
+    position: absolute;
+    font-weight: bold; /* Make it bold */
+    top: -15px;
+    left: 0px; /* Position the checkmark inside the box */
+}
+
+.task-label .task-description {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.task-label .task-label:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.task-completed {
+    background-color: lightgreen !important;
+}
+
+
