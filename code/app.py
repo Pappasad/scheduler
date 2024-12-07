@@ -1,5 +1,8 @@
 from scheduler import Scheduler
 from driver import SheetDriver
+import threading
+import backend
+from monitor import TaskMonitor
 
 # Path to the JSON credentials required for Google Sheets API access.
 CREDENTIALS_PATH = "scheduler-443419-d3a6ff019998.json"
@@ -29,7 +32,21 @@ def test1():
     test_driver.checkBoxes(boxes)  # Check all boxes.
     test_driver.uncheckBoxes(boxes)  # Uncheck all boxes.
 
+def test2():
+    tasks = ['Example1', 'Example2', 'Example3']
+    backend.launchWebApp(tasks)
+    monitor = TaskMonitor(tasks)
+    monitor.activate()
 
+    while monitor.active:
+
+        tasks_from_web = backend.getTasksFromWebApp()
+        all_done = all(task['completed'] for task in tasks_from_web)
+
+        if all_done:
+            monitor.deactivate()
+
+    print("ALL DONE :)")
 
 # Placeholder for an update function to be implemented in the future.
 # TODO: Define the logic for updating the schedule or sheet.
@@ -45,4 +62,4 @@ def run():
 
 # Entry point of the script. Executes the test functions.
 if __name__ == '__main__':
-    test1()
+    test2()
