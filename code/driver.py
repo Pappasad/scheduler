@@ -28,8 +28,6 @@ class SheetDriver:
                 self.active_sheet.update_cell(row, col, "TRUE")
         print("Done checking boxes.")
 
-
-
     def uncheckBoxes(self, boxes):
         """
         Marks the specified checkboxes as unchecked in the active sheet.
@@ -88,3 +86,5 @@ class SheetDriver:
             return "Inactive SheetDriver"
 
         return "SheetDriver with Active Sheet: '" + self.active_sheet.title + "'"
+    
+

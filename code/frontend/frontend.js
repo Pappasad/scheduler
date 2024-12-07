@@ -1,4 +1,4 @@
-// SchedulerApp.js
+
 class SchedulerApp {
     constructor() {
         this.tasks = [];
@@ -112,7 +112,7 @@ class SchedulerApp {
         const messageElement = document.createElement('div');
         messageElement.id = 'all-checked-message';
         messageElement.style.position = 'fixed';
-        messageElement.style.bottom = '100px';
+        messageElement.style.bottom = '50px';
         messageElement.style.width = '100%';
         messageElement.style.textAlign = 'center';
         messageElement.style.color = 'green';

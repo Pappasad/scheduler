@@ -3,18 +3,21 @@ import os
 import threading
 import time
 
+HOST_ADDR = '127.0.0.1'
+PORT = 8080
+
 # Get absolute paths for mitmdump and the monitor script
 mitm_path = os.path.abspath('.venv/Scripts/mitmdump.exe')
 script_path = os.path.abspath('code/monitor-script.py')
 MONITOR_COMMAND = [mitm_path, '-s', script_path]
 
 class TaskMonitor:
-    def __init__(self, task_list):
+    def __init__(self, print_output=False):
         """Initialize the TaskMonitor with a list of tasks."""
-        self.task_list = task_list
         self.active = False
         self.bg_monitor = None
         self._output_thread = None
+        self.print_output = print_output
 
     def activate(self):
         """Start the background monitor."""
@@ -63,8 +66,8 @@ class TaskMonitor:
         """Read stdout and stderr of the subprocess and print it."""
         if self.bg_monitor.stdout:
             for line in iter(self.bg_monitor.stdout.readline, b''):
-                if line:
-                    print(f"\t\t[MONITOR] {line.decode('utf-8').strip()}")
+                if line and self.print_output:
+                    print(f"\t\t[MONITOR] {line.decode('utf-8', errors='ignore').strip()}")
 
     def __enter__(self):
         """Context manager start method."""
@@ -77,7 +80,7 @@ class TaskMonitor:
 
 
 if __name__ == '__main__':
-    test_monitor = TaskMonitor(['Example'])
+    test_monitor = TaskMonitor()
     test_monitor.activate()
     time.sleep(20)
     test_monitor.deactivate()

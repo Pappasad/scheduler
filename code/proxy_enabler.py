@@ -1,5 +1,6 @@
 import os
 import re
+import psutil
 
 
 # Find the default Firefox profile path.
@@ -24,7 +25,20 @@ if not Profile_Path:
 Prefs_File = os.path.join(Profile_Path, 'prefs.js')
 
 
+def closeBrowser():
+    """Closes all running Firefox processes."""
+    for process in psutil.process_iter(['pid', 'name']):
+        try:
+            if 'firefox' in process.info['name'].lower():
+                print(f"Terminating Firefox process (PID: {process.info['pid']})")
+                process.terminate()  # Gracefully terminate the process
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            pass
+
 def setProxyServer(use_proxy, host, port):
+
+    closeBrowser()
+
     proxy_settings = {
         'network.proxy.type': 1 if use_proxy else 0,
         'network.proxy.http': f'"{host}"' if use_proxy else '""',

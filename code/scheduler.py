@@ -15,7 +15,8 @@ class Scheduler:
 
         """
 
-        def __init__(self, series, name=None):
+        def __init__(self, scheduler, series, name):
+            self.scheduler = scheduler
             self.date = name
             # Populate tasks and their statuses from the series.
             for idx in range(1, len(series), 2):
@@ -23,6 +24,9 @@ class Scheduler:
                 while key in self:
                     key += 'I'
                 self[key] = series.iloc[idx-1] in [True, 'True', 'TRUE']
+
+        def getNotDone(self):
+            return [key for key in self.keys() if not self[key]]
 
         def isDone(self):
             """
@@ -39,6 +43,7 @@ class Scheduler:
 
             for key in self:
                 self[key] = val
+            self.scheduler[self.date] = self
 
         def setEmpty(self, val=True):
             """
@@ -47,8 +52,7 @@ class Scheduler:
             """
             for key in (k for k in self.keys() if 'nan' in k):
                 self[key] = val
-
-
+            self.scheduler[self.date] = self
 
         def __repr__(self):
             """
@@ -89,7 +93,7 @@ class Scheduler:
         Retrieves a Day object for the specified date.
 
         """
-        return self.Day(self.sheet_data.loc[self.sheet_data['Date'] == date].drop('Date', axis=1).iloc[0], name=date)
+        return self.Day(self, self.sheet_data.loc[self.sheet_data['Date'] == date].drop('Date', axis=1).iloc[0], name=date)
 
     def __setitem__(self, date, day: Day):
         """
