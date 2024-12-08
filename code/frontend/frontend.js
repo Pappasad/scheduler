@@ -65,6 +65,19 @@ class SchedulerApp {
             taskDesc.textContent = task.description;
             taskDesc.style.flexGrow = '1';
 
+            checkbox.checked = task.completed;
+            if (checkbox.checked) {
+                taskDesc.style.textDecoration = 'line-through'; // Strike-through
+                taskDesc.style.color = 'black'; // Ensure text is visible
+                taskLabel.style.backgroundColor = 'lightgreen'; // Highlight the task
+                taskLabel.classList.add('task-completed');
+            } else {
+                taskDesc.style.textDecoration = 'none'; // Remove strike-through
+                taskDesc.style.color = ''; // Reset to default
+                taskLabel.style.backgroundColor = ''; // Reset background
+                taskLabel.classList.remove('task-completed');
+            }
+
             // Add event listener for the checkbox
             checkbox.addEventListener('change', () => {
                 if (checkbox.checked) {

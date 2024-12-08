@@ -1,9 +1,14 @@
 from mitmproxy import http
 from urllib.parse import urlsplit, unquote
+import json
 
 # Replacement URL and target redirect details
 REPLACEMENT_HOST = "127.0.0.1"
 REPLACEMENT_PORT = 5000
+
+# Websites allowed to circumvent the block
+with open('config.json') as file:
+    ALLOWED = json.load(file)['allowed websites']
 
 def request(flow: http.HTTPFlow) -> None:
     """
@@ -15,6 +20,8 @@ def request(flow: http.HTTPFlow) -> None:
     # 1. Avoid infinite redirects to self
     if REPLACEMENT_HOST in original_url and str(REPLACEMENT_PORT) in original_url:
         return  # Don't redirect requests to itself
+    elif any(site for site in ALLOWED if site in original_url):
+        return
 
     # 2. Get the full path (including query params)
     url_parts = urlsplit(original_url)
