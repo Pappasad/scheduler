@@ -4,7 +4,6 @@ from monitor import TaskMonitor, HOST_ADDR, PORT
 from proxy_enabler import enableProxyServer, disableProxyServer
 from datetime import datetime
 import backend
-from threading import Thread
 import time
 
 # Reading configuration details from 'config.txt'.
@@ -56,7 +55,7 @@ def test3():
     run()
 
 def run():
-    monitor = TaskMonitor()
+    monitor = TaskMonitor(print_output=True)
     schedule = Scheduler(Csv_Url)
     sheet_driver = SheetDriver(Credentials_Path)
   

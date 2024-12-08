@@ -1,23 +1,33 @@
 from mitmproxy import http
-from backend import WEB_ADDR as REPLACEMENT_URL
+from urllib.parse import urlsplit, unquote
+
+# Replacement URL and target redirect details
+REPLACEMENT_HOST = "127.0.0.1"
+REPLACEMENT_PORT = 5000
 
 def request(flow: http.HTTPFlow) -> None:
     """
-    Intercept all outgoing HTTP(S) requests and redirect them to a specific URL.
+    Intercept and redirect all outgoing HTTP(S) requests.
     """
-    original_url = flow.request.url  # Save the original URL for logging
-    if original_url == REPLACEMENT_URL:
-        return
+    original_url = flow.request.pretty_url  # Full URL
+    original_host = flow.request.host
 
-    # Extract the path and query string from the original URL
-    path = flow.request.path
-    query = flow.request.query
+    # 1. Avoid infinite redirects to self
+    if REPLACEMENT_HOST in original_url and str(REPLACEMENT_PORT) in original_url:
+        return  # Don't redirect requests to itself
 
-    # Construct the new URL with the replacement domain and the original path/query
-    flow.request.host = "127.0.0.1"
-    flow.request.port = 5000
-    flow.request.scheme = "http"
-    flow.request.path = path
-    flow.request.query = query
+    # 2. Get the full path (including query params)
+    url_parts = urlsplit(original_url)
+    path_with_query = url_parts.path + ('?' + url_parts.query if url_parts.query else '')
 
-    print(f"Redirecting: {original_url} --> {flow.request.url}")
+    # 3. Decode percent-encoded characters (e.g., %20)
+    decoded_path = unquote(path_with_query)
+    
+    # 4. Log the original and redirected URL
+    print(f"[MONITOR] Redirecting: {original_url} --> http://{REPLACEMENT_HOST}:{REPLACEMENT_PORT}{decoded_path}")
+
+    # 5. Change request host, port, scheme, and path
+    flow.request.host = REPLACEMENT_HOST
+    flow.request.port = REPLACEMENT_PORT
+    flow.request.scheme = "http"  # Convert HTTPS to HTTP
+    flow.request.path = decoded_path
