@@ -13,7 +13,7 @@ MONITOR_COMMAND = [mitm_path, '-s', script_path]
 
 class TaskMonitor:
     def __init__(self, print_output=False):
-        """Initialize the TaskMonitor with a list of tasks."""
+        """Initialize the TaskMonitor"""
         self.active = False
         self.bg_monitor = None
         self._output_thread = None
