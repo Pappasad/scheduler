@@ -24,6 +24,17 @@ class Scheduler:
                 while key in self:
                     key += 'I'
                 self[key] = series.iloc[idx-1] in [True, 'True', 'TRUE']
+            
+        def getMorning(self):
+            morning = Scheduler.Day.__new__(Scheduler.Day)
+            morning.scheduler = self.scheduler
+            morning.date = self.date
+            for i, (key, value) in enumerate(self.items()):
+                if i >= 4:
+                    break
+                morning[key] = value
+
+            return morning
 
         def getNotDone(self):
             return [key for key in self.keys() if not self[key]]

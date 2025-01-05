@@ -66,17 +66,24 @@ def test3():
     run()
 
 def run():
-    monitor = TaskMonitor(print_output=True)
+    monitor = TaskMonitor()
     schedule = Scheduler(config['csv url'])
     sheet_driver = SheetDriver(config['credentials path'])
   
     date = datetime.now()
     m, d, y = str(date.month), str(date.day), str(date.year)
+    day = date.strftime('%A').lower()
+    morning = date.strftime('%p').lower() == 'am'
     date = f'{m}/{d}/{y}'
+
+    if date not in set(schedule.sheet_data['Date']):
+        print("Can't find this day.")
+        return
+ 
     today = schedule[date]
-
+    if morning and day not in {'saturday', 'sunday'}:
+        today = today.getMorning()
     today.setEmpty()
-
     if today.isDone():
         return
 

@@ -3,5 +3,5 @@
     "sheet name": "New Sheduler",
     "sheet number": 2,
     "credentials path": "scheduler-443419-d3a6ff019998.json",
-    "allowed websites": ["chatgpt", "google", "vitalsource", "moodle", "outlook", "gmail"]
+    "allowed websites": ["chatgpt", "google", "vitalsource", "moodle", "outlook", "gmail", "rose"]
 }
