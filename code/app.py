@@ -74,7 +74,7 @@ def run():
     m, d, y = str(date.month), str(date.day), str(date.year)
     day = date.strftime('%A').lower()
     morning = date.strftime('%p').lower() == 'am'
-    date = f'{m}/10/{y}'
+    date = f'{m}/{d}/{y}'
 
     if date not in set(schedule.sheet_data['Date']):
         print(schedule.sheet_data['Date'])
