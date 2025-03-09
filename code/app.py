@@ -67,32 +67,31 @@ def test3():
 
 def run():
     monitor = TaskMonitor()
-    schedule = Scheduler(config['csv url'])
+    schedule = Scheduler(config)
     sheet_driver = SheetDriver(config['credentials path'])
   
     date = datetime.now()
     m, d, y = str(date.month), str(date.day), str(date.year)
     day = date.strftime('%A').lower()
     morning = date.strftime('%p').lower() == 'am'
-    date = f'{m}/{d}/{y}'
+    date = f'{m}/10/{y}'
 
     if date not in set(schedule.sheet_data['Date']):
-        print("Can't find this day.")
+        print(schedule.sheet_data['Date'])
+        print("Can't find this day.", date)
         return
  
     today = schedule[date]
-    if morning and day not in {'saturday', 'sunday'}:
+    if morning and day not in {'sunday'}:
         today = today.getMorning()
     today.setEmpty()
+
     if today.isDone():
         return
 
     tasks = today.getNotDone()
-
     enableProxyServer(HOST_ADDR, PORT)
-
     backend.launchWebApp(tasks)
-
     monitor.activate()
 
     while monitor.active:
@@ -108,7 +107,6 @@ def run():
 
     today.setAll()
     boxes_to_check = schedule.getCheckboxes(date)
-
     sheet_driver.openSheet(config['sheet name'], config['sheet number'])
     sheet_driver.checkBoxes(boxes_to_check)
 

@@ -1,4 +1,7 @@
 import pandas as pd
+import gspread
+from google.oauth2.service_account import Credentials
+import sys
 
 class Scheduler:
 
@@ -76,7 +79,17 @@ class Scheduler:
             return s
 
 
-    def __init__(self, url):
+    def __init__(self, config):
+        creds = Credentials.from_service_account_file(config["credentials path"], scopes=["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"])
+        client = gspread.authorize(creds)
+        sheet = client.open(config['sheet name'])
+        sheets = sheet.worksheets()
+        sheet_map = {i: sheet.id for i, sheet in enumerate(sheets)}
+        gid = sheet_map.get(config['sheet number'], sheets[0].id)
+
+        url = f"https://docs.google.com/spreadsheets/d/e/2PACX-1vR-p1UDbYVoh_rwbZLJhbstmDqYjFH8hin1LdkkhL2e-GyOaDC8JiDNcfa2U4R82kktQcKwTz_1G1Ps/pub?gid={gid}&single=true&output=csv"
+
+
         self.url = url  # URL of the CSV file containing the schedule data.
 
         # Load the CSV data into a Pandas DataFrame.

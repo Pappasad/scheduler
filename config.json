@@ -1,7 +1,7 @@
 {
-    "csv url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR-p1UDbYVoh_rwbZLJhbstmDqYjFH8hin1LdkkhL2e-GyOaDC8JiDNcfa2U4R82kktQcKwTz_1G1Ps/pub?gid=2037975783&single=true&output=csv",
+    "csv url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR-p1UDbYVoh_rwbZLJhbstmDqYjFH8hin1LdkkhL2e-GyOaDC8JiDNcfa2U4R82kktQcKwTz_1G1Ps",
     "sheet name": "New Sheduler",
-    "sheet number": 2,
+    "sheet number": 3,
     "credentials path": "scheduler-443419-d3a6ff019998.json",
     "allowed websites": ["chatgpt", "google", "vitalsource", "moodle", "outlook", "gmail", "rose"]
 }
